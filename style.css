@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color:hsl(212, 23%, 69%);
+}
+.main {
+    display: block;
+    width: 80%;
+    margin: 10vw 10vw;
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+}
+.image img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    display: block;
+}
+.content {
+    margin: 10%;
+    font-size: 15px;
+}
+.content p {
+    margin: 15px 0;
+}
+.footer {
+    display: flex;
+    margin: 10%;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.footer h1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    font-size:15px;
+}
+.footer h1 span {
+    font-weight: normal;
+    color: rgb(119, 130, 133);
+    margin-top: 5px;
+}
+.footer img {
+    width: 20%;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.footer button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: hsl(213, 56%, 83%);
+    background-image: url("images/icon-share.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+}
+.container {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    visibility:  hidden;
+    width: 80%;
+    right: 10%;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: hsl(217, 19%, 35%);
+    transition: all 0.3s ease;
+}
+.container p {
+    font-size: 20px;
+    padding: 12% 0;
+    color: rgb(183, 206, 228);
+}
+.container a {
+    width: 30px;
+    height: 30px;;
+}
+#facebook {
+    background-image: url("images/icon-facebook.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2px;
+}
+#twitter {
+    background-image: url("images/icon-twitter.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2px;
+}
+#pinterest {
+    background-image: url("images/icon-pinterest.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2px;
+}
+@media (min-width: 768px) {
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0;
+    }
+    .image img {
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 0;
+    }
+    .body-footer{
+        height: auto;
+    }
+    .content p {
+        font-size: 25px;
+    }  
+    .footer {
+        margin-bottom: 0;
+    }
+    #button-1 {
+        margin-left: 30%;
+    }
+    .container {
+        position: absolute;
+        width: 300px;
+        height: 70px;
+        bottom: 60px;  /* đặt phía trên nút share */
+        top: 58vh;
+        left: 66.5vw;
+        background-color: hsl(217, 19%, 35%);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    /* mũi tên */
+    .container::after {
+        content: "";
+        position: absolute;
+        bottom: -9px; /* đẩy mũi tên xuống dưới box */
+        right: 40px;   /* chỉnh vị trí cho cân */
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;  /* tạo cạnh trái trong suốt */
+        border-right: 10px solid transparent; /* tạo cạnh phải trong suốt */
+        border-top: 10px solid hsl(217, 19%, 35%); /* cạnh trên có màu = màu box */
+    }
+
+}
